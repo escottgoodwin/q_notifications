@@ -56,7 +56,9 @@ const operation = {
   query: noAnswerQuery,
   variables: {} //optional
 };
+
 console.log('running now');
+
 cron.schedule('* * * * *', () => {
 
   console.log('running a task every minute');
@@ -65,7 +67,7 @@ cron.schedule('* * * * *', () => {
 
   makePromise(execute(link, operation))
     .then(resp => {
-      
+
       console.log(resp.data.questions.count)
 
       resp.data.questions.questions.forEach(item => {
@@ -97,5 +99,4 @@ cron.schedule('* * * * *', () => {
 })
 .catch(error => console.log(`received error ${error}`))
 
-// send notifications to expo sd
 })
