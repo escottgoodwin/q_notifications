@@ -1,0 +1,31 @@
+{
+  "name": "q_notifications",
+  "version": "1.0.0",
+  "description": "quandria notification server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r esm index.js"
+  },
+  "author": "Evan Goodwin",
+  "license": "ISC",
+  "dependencies": {
+    "apollo": "^2.5.1",
+    "apollo-fetch": "^0.7.0",
+    "apollo-link": "^1.2.8",
+    "apollo-link-http": "^1.5.11",
+    "babel-register": "^6.26.0",
+    "dotenv": "^6.2.0",
+    "esm": "^3.2.6",
+    "graphql": "^14.1.1",
+    "graphql-tag": "^2.10.1",
+    "node-cron": "^2.0.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0"
+  }
+}
