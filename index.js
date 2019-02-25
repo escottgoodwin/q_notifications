@@ -65,13 +65,17 @@ cron.schedule('* * * * *', () => {
 
   makePromise(execute(link, operation))
     .then(resp => {
+      
+      console.log(resp.data.questions.count)
 
       resp.data.questions.questions.forEach(item => {
-          const pushMessage = `Please answer a new question for ${item.test.subject} - ${item.test.testNumber} ${item.test.course.name} - ${item.test.course.institution.name}`
+          const pushMessage = `Please answer a new question for ${item.test.testNumber} - ${item.test.subject}.`
 
       const message = {
-        notification.body:pushMessage,
-        notification.title:"Quandrio",
+        notification:{
+          body:pushMessage,
+          title:`${item.test.course.name} - ${item.test.course.institution.name}`,
+        },
         data: {
           questionId: item.id,
         },
