@@ -17,6 +17,7 @@
     "babel-register": "^6.26.0",
     "dotenv": "^6.2.0",
     "esm": "^3.2.6",
+    "firebase-admin": "^7.0.0",
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
     "node-cron": "^2.0.3"
