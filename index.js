@@ -9,7 +9,6 @@ const moment = require('moment')
 
 admin.initializeApp({
   credential: admin.credential.cert(process.env.SERVICE_ACCOUNT),
-  databaseURL: process.env.DATABASE_URL
 })
 
 const uri = process.env.GRAPHQL_SERVER
@@ -24,7 +23,7 @@ const currentMinute1 = currentMinute
 currentMinute1.setMinutes(currentMinute1.getMinutes() + 1)
 
 const noAnswerQuery = gql`
-query {
+query NofiticationQuestions{
   questions(where:{AND:[
   {sentTo:{pushToken_not:null}},{expirationTime:null}]}){
     count
